@@ -1,2 +1,4 @@
 famvenv/
 settings.py
+static/
+__pycache__/
