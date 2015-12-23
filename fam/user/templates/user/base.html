@@ -11,9 +11,18 @@
 </head>
 
 <body>
-<ul class="nav nav-tabs">
-    <li class="active"><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+<div class="container-fluid">
+<ul class="nav nav-tabs row">
+<li class="active"><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
 <li><a href="#"><span class="glyphicon glyphicon-bishop"></span></a></li>
 <li><a href="#"><span class="glyphicon glyphicon-phone"></span></a></li>
+</ul>
+
+</div>
+<div class="container">
+    <div class="row" style="height:30px;"></div>
+
+{% block content %}{% endblock %}
+</div>
 </body>
 </html>

@@ -3,30 +3,30 @@ from django.contrib.contenttypes.fields import GenericRelation, GenericForeignKe
 from django.contrib.contenttypes.models import ContentType
 
 class Family(models.Model):
-    is_active  = models.BooleanField()
+    is_active  = models.BooleanField(default=True)
     name       = models.CharField(max_length=30)
     created_by = models.ForeignKey('UserProfile')
 
 class UserProfile(models.Model):
-    is_active       = models.BooleanField()
+    is_active       = models.BooleanField(default=True)
     first_name      = models.CharField(max_length=30)
     last_name       = models.CharField(max_length=30)
     profile_picture = models.ImageField()
-    family          = models.ForeignKey('Family')
+    fam             = models.ForeignKey('Family')
 
 class Event(models.Model):
-    is_active = models.BooleanField()
+    is_active = models.BooleanField(default=True)
     name      = models.CharField(max_length=30)
     comments  = GenericRelation('Comment')
 
 class EventImage(models.Model):
-    is_active = models.BooleanField()
+    is_active = models.BooleanField(default=True)
     image     = models.ImageField()
     event     = models.ForeignKey('Event')
     comments  = GenericRelation('Comment')
 
 class Comment(models.Model):
-    is_active = models.BooleanField()
+    is_active = models.BooleanField(default=True)
     author    = models.ForeignKey('UserProfile')
     comment   = models.TextField()
 
